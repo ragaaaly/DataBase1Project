@@ -1,7 +1,6 @@
-﻿--drop database postGradOffice
-CREATE DATABASE postGradOffice;
+﻿CREATE DATABASE post;
 go
-use postGradOffice;
+use post;
 CREATE TABLE PostGradUser(
 id int primary key identity(1,1),
 email varchar(50) not null,
@@ -200,11 +199,10 @@ primary key(serialNo,pubid)
 
 -----------------------------------------------------------------------------------
 ---*PROCEDURES*------------------
---go
---exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 0, 'hoda.desouki@student.guc.eg','Sherouk City'
---go
------------
 go
+exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 0, 'hoda.desouki@student.guc.eg','Sherouk City'
+go
+-----------
 create proc studentRegister
 @first_name varchar(20),
 @last_name varchar(20),
@@ -247,8 +245,11 @@ insert into Supervisor(id,name,faculty) values(@id,@name,@faculty)
 end
 
 go
+drop proc examinerRegister
+go
 create proc examinerRegister
-@name varchar(20),
+@first_name varchar(20),
+@last_name varchar(20),
 @fieldOfWork varchar(100),
 @isNational bit,
 @email varchar(20),
@@ -259,6 +260,8 @@ insert into PostGradUser(email,password)
 values(@email,@password)
 declare @id int
 SELECT @id=SCOPE_IDENTITY()
+declare @name varchar(50)
+set @name = CONCAT(@first_name, @last_name)
 insert into Examiner(id,name,fieldOfWork,isNational) values(@id,@name,@fieldOfWork,@isNational)
 end
 
@@ -474,11 +477,10 @@ tp.serialNo=t.serialNumber
 inner join Publication p on p.id=tp.pubid
 where p.accepted=1
 -------------
---go
---exec AddCourse CSEN501 , 6 , 5000
---go
--------------
 go
+exec AddCourse CSEN501 , 6 , 5000
+go
+-------------
 CREATE Proc AddCourse
 @courseCode varchar(10),
 @creditHrs int,
@@ -486,11 +488,10 @@ CREATE Proc AddCourse
 As
 insert into Course values(@fees,@creditHrs,@courseCode)
 ---------------
---go
---exec linkCourseStudent 1 ,1
---go
+go
+exec linkCourseStudent 1 ,1
+go
 ---------------
-GO
 CREATE Proc linkCourseStudent
 @courseID int,
 @studentID int
