@@ -71,6 +71,7 @@
     <Content Include="RegisterExaminer.aspx" />
     <Content Include="RegisterStudent.aspx" />
     <Content Include="RegisterSupervisor.aspx" />
+    <Content Include="SupervisorIntermediate.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +103,13 @@
     </Compile>
     <Compile Include="RegisterSupervisor.aspx.designer.cs">
       <DependentUpon>RegisterSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorIntermediate.aspx.cs">
+      <DependentUpon>SupervisorIntermediate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorIntermediate.aspx.designer.cs">
+      <DependentUpon>SupervisorIntermediate.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

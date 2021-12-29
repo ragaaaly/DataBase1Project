@@ -11,23 +11,31 @@
         <div>
         </div>
         <p>
-            &nbsp;Name</p>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            First Name</p>
+        <asp:TextBox ID="firstName" runat="server"></asp:TextBox>
         <p>
+             
+            Last Name</p>
+        <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
+        <p>
+
             Password</p>
-        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <asp:TextBox ID="password" runat="server"></asp:TextBox>
         <br />
         <br />
         Email<p>
-        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+        <asp:TextBox ID="email" runat="server"></asp:TextBox>
         </p>
         <p>
             Field of Work</p>
         <p>
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:TextBox ID="fieldOfWork" runat="server"></asp:TextBox>
         </p>
-        <asp:RadioButton ID="RadioButton1" runat="server"  Text="National"/>
-        <asp:RadioButton ID="RadioButton2" runat="server" Text="Not National" />
+        <asp:RadioButton ID="national" runat="server"  Text="National"/>
+        <asp:RadioButton ID="notNational" runat="server" Text="Not National" />
+         <p>
+            <asp:Button ID="submit" runat="server" Text="Submit" OnClick="Button1_Click" />
+        </p>
     </form>
 </body>
 </html>
