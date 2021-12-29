@@ -1,4 +1,5 @@
-﻿CREATE DATABASE postGradOffice;
+﻿--drop database postGradOffice
+CREATE DATABASE postGradOffice;
 go
 use postGradOffice;
 CREATE TABLE PostGradUser(
@@ -199,10 +200,11 @@ primary key(serialNo,pubid)
 
 -----------------------------------------------------------------------------------
 ---*PROCEDURES*------------------
-go
-exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 0, 'hoda.desouki@student.guc.eg','Sherouk City'
-go
+--go
+--exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 0, 'hoda.desouki@student.guc.eg','Sherouk City'
+--go
 -----------
+go
 create proc studentRegister
 @first_name varchar(20),
 @last_name varchar(20),
@@ -472,10 +474,11 @@ tp.serialNo=t.serialNumber
 inner join Publication p on p.id=tp.pubid
 where p.accepted=1
 -------------
-go
-exec AddCourse CSEN501 , 6 , 5000
-go
+--go
+--exec AddCourse CSEN501 , 6 , 5000
+--go
 -------------
+go
 CREATE Proc AddCourse
 @courseCode varchar(10),
 @creditHrs int,
@@ -483,10 +486,11 @@ CREATE Proc AddCourse
 As
 insert into Course values(@fees,@creditHrs,@courseCode)
 ---------------
-go
-exec linkCourseStudent 1 ,1
-go
+--go
+--exec linkCourseStudent 1 ,1
+--go
 ---------------
+GO
 CREATE Proc linkCourseStudent
 @courseID int,
 @studentID int
