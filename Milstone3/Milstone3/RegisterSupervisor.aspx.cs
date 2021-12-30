@@ -24,7 +24,7 @@ namespace Milstone3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string connStr = WebConfigurationManager.ConnectionStrings["postGradOffice"].ToString();
+            string connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
             String first = firstName.Text;
             String last = lastName.Text;
@@ -39,10 +39,14 @@ namespace Milstone3
             RegisterSupervisorproc.Parameters.Add(new SqlParameter("@password", pass));
             RegisterSupervisorproc.Parameters.Add(new SqlParameter("@faculty", fac));
             RegisterSupervisorproc.Parameters.Add(new SqlParameter("@email", mail));
-          
+            SqlParameter user = RegisterSupervisorproc.Parameters.Add("@id", SqlDbType.Int);
+            user.Direction = ParameterDirection.Output;
             conn.Open();
             RegisterSupervisorproc.ExecuteNonQuery();
-            Response.Redirect("IntermediateSupervisor.aspx");
+            String supervisorid = "Your User-ID is: " + user.Value.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
+             "alert('" + supervisorid + "');window.location ='Login.aspx';", true);
+            //Response.Redirect("IntermediateSupervisor.aspx");
             conn.Close();
         }
     }

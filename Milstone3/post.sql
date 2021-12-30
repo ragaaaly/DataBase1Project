@@ -1,4 +1,4 @@
-﻿CREATE DATABASE post;
+﻿create DATABASE post;
 go
 use post;
 CREATE TABLE PostGradUser(
@@ -12,9 +12,8 @@ id int primary key foreign key references PostGradUser on delete cascade
 on update cascade
 )
 
-CREATE TABLE GucianStudent(
-id int primary key foreign key references PostGradUser on delete cascade
-on update cascade,
+create TABLE GucianStudent(
+id int primary key foreign key references PostGradUser on delete cascade on update cascade,
 firstName varchar(20),
 lastName varchar(20),
 type varchar(3),
@@ -35,15 +34,16 @@ address varchar(50),
 GPA decimal(3,2),
 )
 
-CREATE TABLE GUCStudentPhoneNumber(
-phone int,
+create TABLE GUCStudentPhoneNumber(
+phone varchar(20),
 id int,
 primary key(id, phone),
 foreign key(id) references GucianStudent on delete cascade
 on update cascade
 )
-CREATE TABLE NonGUCStudentPhoneNumber(
-phone int,
+create TABLE NonGUCStudentPhoneNumber
+(
+phone varchar(20),
 id int,
 primary key(id, phone),
 foreign key(id) references NonGucianStudent on delete
@@ -199,10 +199,8 @@ primary key(serialNo,pubid)
 
 -----------------------------------------------------------------------------------
 ---*PROCEDURES*------------------
-go
-exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 0, 'hoda.desouki@student.guc.eg','Sherouk City'
-go
 -----------
+go
 create proc studentRegister
 @first_name varchar(20),
 @last_name varchar(20),
@@ -210,12 +208,12 @@ create proc studentRegister
 @faculty varchar(20),
 @Gucian bit,
 @email varchar(50),
-@address varchar(50)
+@address varchar(50),
+@id int output
 as
 begin
 insert into PostGradUser(email,password)
 values(@email,@password)
-declare @id int
 SELECT @id=SCOPE_IDENTITY()
 if(@Gucian=1)
 insert into GucianStudent(id,firstName,lastName,faculty,address)
@@ -224,7 +222,13 @@ else
 insert into NonGucianStudent(id,firstName,lastName,faculty,address)
 values(@id,@first_name,@last_name,@faculty,@address)
 end
-
+go
+declare @id int
+exec studentRegister 'Nada', 'Aiman' ,'pass2', 'MET', 1, 'nada.aiman@student.guc.eg','Fifth Settlement', @id output
+print @id
+go
+exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 0, 'hoda.desouki@student.guc.eg','Sherouk City'
+go
 
 go
 create proc supervisorRegister
@@ -232,12 +236,12 @@ create proc supervisorRegister
 @last_name varchar(20),
 @password varchar(20),
 @faculty varchar(20),
-@email varchar(50)
+@email varchar(50),
+@id int output
 as
 begin
 insert into PostGradUser(email,password)
 values(@email,@password)
-declare @id int
 SELECT @id=SCOPE_IDENTITY()
 declare @name varchar(50)
 set @name = CONCAT(@first_name,@last_name)
@@ -245,27 +249,23 @@ insert into Supervisor(id,name,faculty) values(@id,@name,@faculty)
 end
 
 go
-drop proc examinerRegister
-go
 create proc examinerRegister
 @first_name varchar(20),
 @last_name varchar(20),
 @fieldOfWork varchar(100),
 @isNational bit,
 @email varchar(20),
-@password varchar(20)
+@password varchar(20),
+@id int output
 As
 begin
 insert into PostGradUser(email,password)
 values(@email,@password)
-declare @id int
 SELECT @id=SCOPE_IDENTITY()
 declare @name varchar(50)
 set @name = CONCAT(@first_name, @last_name)
 insert into Examiner(id,name,fieldOfWork,isNational) values(@id,@name,@fieldOfWork,@isNational)
 end
-
-drop proc userLogin
 go
 Create proc userLogin
 @id int,
@@ -297,9 +297,19 @@ set @success=0
 end
 
 
+declare @success bit
+declare @type int
+exec userLogin 'hoda.desouki@student.guc.eg' ,'pass1' ,@success output ,@type output
+print @success 
+print @type
+------go
+------exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 1, 'hoda.desouki@student.guc.eg','Sherouk City'
+------go
+--select *
+--from PostGradUser
 go
 create proc addMobile
-@ID varchar(20),
+@ID int,
 @mobile_number varchar(20)
 as
 begin
@@ -312,7 +322,9 @@ if(exists(select * from NonGucianStudent where id=@ID))
 insert into NonGUCStudentPhoneNumber values(@ID,@mobile_number)
 end
 end
-
+--go
+--insert into GUCStudentPhoneNumber values( 3,'01018928328')
+--go
 
 go
 CREATE Proc AdminListSup
@@ -469,7 +481,8 @@ end
 
 
 go
-CREATE Proc AdminListAcceptPublication
+CREATE Proc 
+ListAcceptPublication
 As
 select t.serialNumber,p.title
 from ThesisHasPublication tp inner join Thesis t on
@@ -477,10 +490,9 @@ tp.serialNo=t.serialNumber
 inner join Publication p on p.id=tp.pubid
 where p.accepted=1
 -------------
-go
-exec AddCourse CSEN501 , 6 , 5000
-go
+
 -------------
+go
 CREATE Proc AddCourse
 @courseCode varchar(10),
 @creditHrs int,
@@ -488,10 +500,8 @@ CREATE Proc AddCourse
 As
 insert into Course values(@fees,@creditHrs,@courseCode)
 ---------------
+-----------
 go
-exec linkCourseStudent 1 ,1
-go
----------------
 CREATE Proc linkCourseStudent
 @courseID int,
 @studentID int

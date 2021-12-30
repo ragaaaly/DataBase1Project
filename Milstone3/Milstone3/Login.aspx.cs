@@ -14,61 +14,64 @@ namespace Milstone3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void loggingIn_Click(object sender, EventArgs e)
         {
-            string connStr = WebConfigurationManager.ConnectionStrings["postGradOffice"].ToString();
+            String connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
             int user = Int16.Parse(id.Text);
             String pass = password.Text;
             SqlCommand Loginproc = new SqlCommand("userLogin", conn);
             Loginproc.CommandType = CommandType.StoredProcedure;
-            Loginproc.Parameters.Add(new SqlParameter("@id", id));
+            Loginproc.Parameters.Add(new SqlParameter("@id", user));
             Loginproc.Parameters.Add(new SqlParameter("@password ", pass));
-            SqlParameter success = Loginproc.Parameters.Add("@success", SqlDbType.Int);
+            SqlParameter success = Loginproc.Parameters.Add("@success", SqlDbType.Bit);
             SqlParameter type = Loginproc.Parameters.Add("@type", SqlDbType.Int);
             success.Direction = ParameterDirection.Output;
             type.Direction = ParameterDirection.Output;
             conn.Open();
             Loginproc.ExecuteNonQuery();
-            conn.Close();
-            if (success.Value.ToString() == "1")
+            if (success.Value.ToString() == "True")
             {
-                if (type.Value.ToString()=="0")
+                Session["user"] = user;
+                if (type.Value.ToString() == "0")
                 {
-                    Response.Redirect("Gucian");
+                    Response.Redirect("Gucian.aspx");
 
                 }
-                else if(type.Value.ToString() == "1")
+                else if (type.Value.ToString() == "1")
                 {
-                    Response.Redirect("Admin");
+                    Response.Redirect("Admin.aspx");
 
                 }
                 else if (type.Value.ToString() == "2")
                 {
-                    Response.Redirect("Supervisor");
+                    Response.Redirect("Supervisor.aspx");
 
                 }
                 else if (type.Value.ToString() == "3")
                 {
-                    Response.Redirect("Examiner");
+                    Response.Redirect("Examiner.aspx");
 
                 }
                 else
                 {
-                    Response.Redirect("NonGucian");
+                    Response.Redirect("NonGucian.aspx");
 
                 }
                
-                Response.Write("Hello");
             }
             else
             {
+              ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Wrong User-id or password"  + "');", true);
 
             }
-
+            conn.Close();
+        }
+        protected void register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("register.aspx");
         }
     }
 }

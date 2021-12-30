@@ -19,7 +19,7 @@ namespace Milstone3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string connStr = WebConfigurationManager.ConnectionStrings["postGradOffice"].ToString();       //is this the db name or the sql file name?
+            string connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();       //is this the db name or the sql file name?
             SqlConnection conn = new SqlConnection(connStr);
             String first = firstName.Text;
             String last = lastName.Text;
@@ -40,9 +40,13 @@ namespace Milstone3
             RegisterExaminerproc.Parameters.Add(new SqlParameter("@email", mail));
             RegisterExaminerproc.Parameters.Add(new SqlParameter("@fieldOfWork", field));
             RegisterExaminerproc.Parameters.Add(new SqlParameter("@isNational", nation));
-
+            SqlParameter user = RegisterExaminerproc.Parameters.Add("@id", SqlDbType.Int);
+            user.Direction = ParameterDirection.Output;
             conn.Open();
             RegisterExaminerproc.ExecuteNonQuery();
+            String examinerid = "Your User-ID is: " + user.Value.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
+             "alert('" + examinerid + "');window.location ='Login.aspx';", true);
             conn.Close();
         }
     

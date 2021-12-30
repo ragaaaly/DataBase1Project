@@ -67,14 +67,64 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin.aspx" />
+    <Content Include="Examiner.aspx" />
+    <Content Include="Gucian.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="NonGucian.aspx" />
+    <Content Include="PhoneNumber.aspx" />
     <Content Include="register.aspx" />
     <Content Include="RegisterExaminer.aspx" />
     <Content Include="RegisterStudent.aspx" />
     <Content Include="RegisterSupervisor.aspx" />
+    <Content Include="StudentProfile.aspx" />
+    <Content Include="Supervisor.aspx" />
     <Content Include="SupervisorIntermediate.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Examiner.aspx.cs">
+      <DependentUpon>Examiner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Examiner.aspx.designer.cs">
+      <DependentUpon>Examiner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gucian.aspx.cs">
+      <DependentUpon>Gucian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gucian.aspx.designer.cs">
+      <DependentUpon>Gucian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NonGucian.aspx.cs">
+      <DependentUpon>NonGucian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NonGucian.aspx.designer.cs">
+      <DependentUpon>NonGucian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneNumber.aspx.cs">
+      <DependentUpon>PhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhoneNumber.aspx.designer.cs">
+      <DependentUpon>PhoneNumber.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -103,6 +153,20 @@
     </Compile>
     <Compile Include="RegisterSupervisor.aspx.designer.cs">
       <DependentUpon>RegisterSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentProfile.aspx.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentProfile.aspx.designer.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor.aspx.cs">
+      <DependentUpon>Supervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor.aspx.designer.cs">
+      <DependentUpon>Supervisor.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupervisorIntermediate.aspx.cs">
       <DependentUpon>SupervisorIntermediate.aspx</DependentUpon>

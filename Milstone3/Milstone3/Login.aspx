@@ -6,14 +6,14 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="height: 478px">
     <form id="form1" runat="server">
-        <div>
+        <%--<div>--%>
         </div>
         Welcome<p>
-            Please enter your Email and password</p>
+            Please enter your User-ID and password</p>
         <p>
-            Email</p>
+            User-ID</p>
         <p>
             <asp:TextBox ID="id" runat="server"></asp:TextBox>
         </p>
@@ -24,6 +24,10 @@
         </p>
         <p>
             <asp:Button ID="loggingIn" runat="server" Text="Login" OnClick="loggingIn_Click" />
+        </p>
+        Not registered yet?<br />
+        <p>
+        <asp:Button ID="register" runat="server" Text="Register" OnClick="register_Click" />
         </p>
     </form>
 </body>
