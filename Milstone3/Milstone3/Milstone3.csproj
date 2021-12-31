@@ -68,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="AdminIssueInstallPayment.aspx" />
+    <Content Include="AdminIssueThesisPayment.aspx" />
+    <Content Include="AdminUpdateExtension.aspx" />
+    <Content Include="AdminViewAllTheses.aspx" />
+    <Content Include="AdminViewOnGoingTheses.aspx" />
+    <Content Include="AdminViewSupervisorProfile.aspx" />
     <Content Include="Examiner.aspx" />
     <Content Include="Gucian.aspx" />
     <Content Include="Login.aspx" />
@@ -89,6 +95,48 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminIssueInstallPayment.aspx.cs">
+      <DependentUpon>AdminIssueInstallPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminIssueInstallPayment.aspx.designer.cs">
+      <DependentUpon>AdminIssueInstallPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminIssueThesisPayment.aspx.cs">
+      <DependentUpon>AdminIssueThesisPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminIssueThesisPayment.aspx.designer.cs">
+      <DependentUpon>AdminIssueThesisPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateExtension.aspx.cs">
+      <DependentUpon>AdminUpdateExtension.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateExtension.aspx.designer.cs">
+      <DependentUpon>AdminUpdateExtension.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewAllTheses.aspx.cs">
+      <DependentUpon>AdminViewAllTheses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminViewAllTheses.aspx.designer.cs">
+      <DependentUpon>AdminViewAllTheses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewOnGoingTheses.aspx.cs">
+      <DependentUpon>AdminViewOnGoingTheses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminViewOnGoingTheses.aspx.designer.cs">
+      <DependentUpon>AdminViewOnGoingTheses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewSupervisorProfile.aspx.cs">
+      <DependentUpon>AdminViewSupervisorProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminViewSupervisorProfile.aspx.designer.cs">
+      <DependentUpon>AdminViewSupervisorProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Examiner.aspx.cs">
       <DependentUpon>Examiner.aspx</DependentUpon>

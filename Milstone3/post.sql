@@ -222,13 +222,13 @@ else
 insert into NonGucianStudent(id,firstName,lastName,faculty,address)
 values(@id,@first_name,@last_name,@faculty,@address)
 end
-go
-declare @id int
-exec studentRegister 'Nada', 'Aiman' ,'pass2', 'MET', 1, 'nada.aiman@student.guc.eg','Fifth Settlement', @id output
-print @id
-go
-exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 0, 'hoda.desouki@student.guc.eg','Sherouk City'
-go
+--go
+--declare @id int
+--exec studentRegister 'Nada', 'Aiman' ,'pass2', 'MET', 1, 'nada.aiman@student.guc.eg','Fifth Settlement', @id output
+--print @id
+--go
+--exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 0, 'hoda.desouki@student.guc.eg','Sherouk City'
+--go
 
 go
 create proc supervisorRegister
@@ -297,11 +297,11 @@ set @success=0
 end
 
 
-declare @success bit
-declare @type int
-exec userLogin 'hoda.desouki@student.guc.eg' ,'pass1' ,@success output ,@type output
-print @success 
-print @type
+--declare @success bit
+--declare @type int
+--exec userLogin 'hoda.desouki@student.guc.eg' ,'pass1' ,@success output ,@type output
+--print @success 
+--print @type
 ------go
 ------exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 1, 'hoda.desouki@student.guc.eg','Sherouk City'
 ------go
@@ -377,7 +377,7 @@ sr.sid=gs.id
 where t.endDate > Convert(Date,CURRENT_TIMESTAMP)
 
 
-go
+--go
 go
 CREATE Proc AdminListNonGucianCourse
 @courseID int
