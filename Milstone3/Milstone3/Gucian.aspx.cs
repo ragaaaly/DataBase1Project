@@ -18,14 +18,14 @@ namespace Milstone3
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Theses_Click (object sender, EventArgs e)
         {
-
+            Response.Redirect("GUCianTheses.aspx");
         }
 
         protected void profile_Click(object sender, EventArgs e)
         {
-            Response.Redirect("StudentProfile.aspx");
+            Response.Redirect("GUCianProfile.aspx");
 
             
             //conn.Close();
@@ -39,6 +39,22 @@ namespace Milstone3
             //GridView1.DataSource = RegisterSupervisorproc.ExecuteReader();
             //GridView1.DataBind();
 
+        }
+
+        protected void report_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddProgressReport.aspx");
+        }
+
+        protected void pub_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Publication.aspx");
+
+        }
+
+        protected void phone_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PhoneNumber.aspx");
         }
     }
 }

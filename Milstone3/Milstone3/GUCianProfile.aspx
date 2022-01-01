@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentProfile.aspx.cs" Inherits="Milstone3.StudentProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GUCianProfile.aspx.cs" Inherits="Milstone3.StudentProfile" %>
 
 <!DOCTYPE html>
 
@@ -18,6 +18,8 @@
                <asp:BoundField  DataField="address" HeaderText="Address" />
                 <asp:BoundField  DataField="GPA" HeaderText="GPA" />
                 <asp:BoundField  DataField="undergradID" HeaderText="Undergrad ID" />
+                <asp:BoundField  DataField="email" HeaderText="Email" />
+
             </Columns>
 
            </asp:GridView>

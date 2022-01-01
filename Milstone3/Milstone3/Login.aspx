@@ -8,8 +8,6 @@
 </head>
 <body style="height: 478px">
     <form id="form1" runat="server">
-        <%--<div>--%>
-        </div>
         Welcome<p>
             Please enter your User-ID and password</p>
         <p>
