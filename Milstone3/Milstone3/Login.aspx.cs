@@ -11,7 +11,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace Milstone3
 {
@@ -56,7 +56,7 @@ namespace Milstone3
                 }
                 else if (type.Value.ToString() == "3")
                 {
-                    Response.Redirect("Examiner.aspx");
+                    Response.Redirect("Eaminer home.aspx");
 
                 }
                 else
