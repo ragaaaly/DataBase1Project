@@ -74,11 +74,15 @@
     <Content Include="AdminViewAllTheses.aspx" />
     <Content Include="AdminViewOnGoingTheses.aspx" />
     <Content Include="AdminViewSupervisorProfile.aspx" />
+    <Content Include="Comments.aspx" />
+    <Content Include="Eaminer home.aspx" />
+    <Content Include="ExaminarInfo.aspx" />
     <Content Include="Examiner.aspx" />
     <Content Include="Gucian.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="NonGucian.aspx" />
     <Content Include="PhoneNumber.aspx" />
+    <Content Include="Prework.aspx" />
     <Content Include="register.aspx" />
     <Content Include="RegisterExaminer.aspx" />
     <Content Include="RegisterStudent.aspx" />
@@ -86,6 +90,7 @@
     <Content Include="StudentProfile.aspx" />
     <Content Include="Supervisor.aspx" />
     <Content Include="SupervisorIntermediate.aspx" />
+    <Content Include="theeeesis.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +143,27 @@
     <Compile Include="AdminViewSupervisorProfile.aspx.designer.cs">
       <DependentUpon>AdminViewSupervisorProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Comments.aspx.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comments.aspx.designer.cs">
+      <DependentUpon>Comments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eaminer home.aspx.cs">
+      <DependentUpon>Eaminer home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eaminer home.aspx.designer.cs">
+      <DependentUpon>Eaminer home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExaminarInfo.aspx.cs">
+      <DependentUpon>ExaminarInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExaminarInfo.aspx.designer.cs">
+      <DependentUpon>ExaminarInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Examiner.aspx.cs">
       <DependentUpon>Examiner.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -172,6 +198,13 @@
     </Compile>
     <Compile Include="PhoneNumber.aspx.designer.cs">
       <DependentUpon>PhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prework.aspx.cs">
+      <DependentUpon>Prework.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prework.aspx.designer.cs">
+      <DependentUpon>Prework.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
@@ -222,6 +255,13 @@
     </Compile>
     <Compile Include="SupervisorIntermediate.aspx.designer.cs">
       <DependentUpon>SupervisorIntermediate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="theeeesis.aspx.cs">
+      <DependentUpon>theeeesis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="theeeesis.aspx.designer.cs">
+      <DependentUpon>theeeesis.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
