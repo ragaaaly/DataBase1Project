@@ -25,12 +25,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-
-            <asp:Label ID="Label1" runat="server" Text="Enter Supervisor ID"></asp:Label>
-            <br />
-            <asp:TextBox ID="supid" runat="server"></asp:TextBox>
-            <br />
-            <asp:Button ID="Button1" runat="server" OnClick="AdminViewSupervisorProfileProc" Text="View" />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="ID" />

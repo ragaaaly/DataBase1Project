@@ -14,16 +14,10 @@ namespace Milstone3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-        protected void AdminViewSupervisorProfileProc(object sender, EventArgs e)
-        {
             string connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
             SqlCommand AdminViewSupervisorProfile = new SqlCommand("AdminViewSupervisorProfile", conn);
             AdminViewSupervisorProfile.CommandType = CommandType.StoredProcedure;
-            int supId = Int16.Parse(supid.Text);
-            AdminViewSupervisorProfile.Parameters.Add(new SqlParameter("@supId", supId));
             conn.Open();
             GridView1.EmptyDataText = "No Records Found";
             GridView1.DataSource = AdminViewSupervisorProfile.ExecuteReader();

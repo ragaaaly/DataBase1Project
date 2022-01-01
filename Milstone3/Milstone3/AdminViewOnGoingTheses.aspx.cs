@@ -18,12 +18,10 @@ namespace Milstone3
             SqlConnection conn = new SqlConnection(connStr);
             SqlCommand AdminViewOnGoingTheses = new SqlCommand("AdminViewOnGoingTheses", conn);
             AdminViewOnGoingTheses.CommandType = CommandType.StoredProcedure;
-            SqlParameter thesesCount = AdminViewOnGoingTheses.Parameters.Add("@thesesCount", SqlDbType.Int);
-            thesesCount.Direction = ParameterDirection.Output;
             conn.Open();
-            AdminViewOnGoingTheses.ExecuteNonQuery();
-            String thesesCountv = thesesCount.Value.ToString();
-            Response.Write(thesesCountv);
+            GridView1.EmptyDataText = "No Records Found";
+            GridView1.DataSource = AdminViewOnGoingTheses.ExecuteReader();
+            GridView1.DataBind();
             conn.Close();
         }
     }

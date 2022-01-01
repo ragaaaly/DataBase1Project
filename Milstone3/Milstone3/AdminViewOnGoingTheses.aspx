@@ -6,6 +6,15 @@
 <head runat="server">
     <title></title>
 </head>
+<style>
+    #GridView1 {
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        border: 5px solid #000000;
+        padding: 10px;
+    }
+</style>
 <body>
     <form id="form1" runat="server">
         <div>

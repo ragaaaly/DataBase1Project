@@ -335,11 +335,9 @@ from PostGradUser u inner join Supervisor s on u.id = s.id
 
 go
 CREATE Proc AdminViewSupervisorProfile
-@supId int
 As
 Select u.id,u.email,u.password,s.name, s.faculty
 from PostGradUser u inner join Supervisor s on u.id = s.id
-WHERE @supId = s.id
 
 
 go

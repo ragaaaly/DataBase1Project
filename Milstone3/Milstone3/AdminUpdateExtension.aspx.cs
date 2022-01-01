@@ -26,6 +26,7 @@ namespace Milstone3
             AdminUpdateExtension.Parameters.Add(new SqlParameter("@ThesisSerialNo", ThesisSerialNo1));
             conn.Open();
             AdminUpdateExtension.ExecuteNonQuery();
+            Response.Write("<script>alert('Your data has been successfully updated')</script>");
             conn.Close();
         }
     }
