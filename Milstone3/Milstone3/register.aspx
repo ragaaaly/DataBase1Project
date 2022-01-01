@@ -6,6 +6,15 @@
 <head runat="server">
     <title></title>
 </head>
+<style>
+    form {
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        border: 5px solid #000000;
+        padding: 10px;
+    }
+</style>
 <body>
     <form id="form1" runat="server">
         <div>
@@ -17,8 +26,8 @@
             Choose what would you like to register as
         </p>
         <asp:Button ID="student" runat="server" Text="Student" OnClick="Student_Click" />
-        <asp:Button ID="supervisor" runat="server" Text="Supervisor"  OnClick="Supervisor_Click"/>
-        <asp:Button ID="examiner" runat="server" Text="Examiner" OnClick="Examiner_Click"/>
+        <asp:Button ID="supervisor" runat="server" Text="Supervisor" OnClick="Supervisor_Click" />
+        <asp:Button ID="examiner" runat="server" Text="Examiner" OnClick="Examiner_Click" />
     </form>
 </body>
 </html>

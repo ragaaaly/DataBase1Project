@@ -9,6 +9,15 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 </head>
+<style>
+    form {
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        border: 5px solid #000000;
+        padding: 10px;
+    }
+</style>
 <body style="height: 478px">
     <form id="form1" runat="server">
         <%--<div>--%>

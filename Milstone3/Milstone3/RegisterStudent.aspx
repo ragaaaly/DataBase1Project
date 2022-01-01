@@ -6,34 +6,48 @@
 <head runat="server">
     <title></title>
 </head>
+<style>
+    form {
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        border: 5px solid #000000;
+        padding: 10px;
+    }
+</style>
 <body>
     <form id="form1" runat="server">
         <div>
         </div>
         <p>
-            First Name</p>
-        <asp:TextBox ID="firstName" runat="server" ></asp:TextBox>
+            First Name
+        </p>
+        <asp:TextBox ID="firstName" runat="server"></asp:TextBox>
         <p>
-            Last Name</p>
+            Last Name
+        </p>
         <p>
             <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
         </p>
         <p>
-            Password</p>
+            Password
+        </p>
         <asp:TextBox ID="password" runat="server"></asp:TextBox>
         <p>
-            Faculty</p>
+            Faculty
+        </p>
         <asp:TextBox ID="faculty" runat="server"></asp:TextBox>
         <p>
-        <asp:RadioButton ID="gucian" runat="server"  Text="GUCain"/> 
-        <asp:RadioButton ID="nongucian" runat="server"  Text="Non GUCian"/>
+            <asp:RadioButton ID="gucian" runat="server" Text="GUCain" />
+            <asp:RadioButton ID="nongucian" runat="server" Text="Non GUCian" />
         </p>
         Email<br />
         <p>
             <asp:TextBox ID="email" runat="server"></asp:TextBox>
         </p>
         <p>
-            Address</p>
+            Address
+        </p>
         <p>
             <asp:TextBox ID="address" runat="server"></asp:TextBox>
         </p>
@@ -41,7 +55,8 @@
             <asp:Button ID="submit" runat="server" Text="Submit" OnClick="Button1_Click" />
         </p>
         <p>
-            &nbsp;</p>
+            &nbsp;
+        </p>
     </form>
 </body>
 </html>
