@@ -5,14 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
 </head>
 <style>
     form {
         text-align: center;
         margin: auto;
-        width: 50%;
+        width: 40%;
         border: 5px solid #000000;
         padding: 10px;
+        font-family: "Sansita Swashed", cursive
     }
 </style>
 <body>
@@ -44,7 +48,7 @@
         </p>
         <asp:CheckBox ID="national" runat="server" Text="National" />
         <p>
-            <asp:Button ID="submit" runat="server" Text="Submit" OnClick="Button1_Click" />
+            <asp:Button class="btn btn-outline-dark" ID="submit" runat="server" Text="Submit" OnClick="Button1_Click" />
         </p>
     </form>
 </body>

@@ -1,4 +1,4 @@
-﻿    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Milstone3.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Milstone3.Login" %>
 
 <!DOCTYPE html>
 
@@ -36,13 +36,13 @@
             <asp:TextBox ID="password" type="password" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="loggingIn" runat="server" class="btn btn-primary" Text="Login" OnClick="loggingIn_Click" />
+            <asp:Button ID="loggingIn" runat="server" class="btn btn-outline-dark" Text="Login" OnClick="loggingIn_Click" />
             <br />
             <br />
             <asp:Label ID="Label5" runat="server" Text="Not registered yet?"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="register" runat="server" class="btn btn-primary" Text="Register" OnClick="register_Click" />
+            <asp:Button ID="register" runat="server" class="btn btn-outline-dark" Text="Register" OnClick="register_Click" />
         </div>
     </form>
 </body>
