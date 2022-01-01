@@ -42,8 +42,7 @@
         <p>
             <asp:TextBox ID="fieldOfWork" runat="server"></asp:TextBox>
         </p>
-        <asp:RadioButton ID="national" runat="server" Text="National" />
-        <asp:RadioButton ID="notNational" runat="server" Text="Not National" />
+        <asp:CheckBox ID="national" runat="server" Text="National" />
         <p>
             <asp:Button ID="submit" runat="server" Text="Submit" OnClick="Button1_Click" />
         </p>

@@ -75,16 +75,7 @@ namespace Milstone3
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton national;
-
-        /// <summary>
-        /// notNational control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton notNational;
+        protected global::System.Web.UI.WebControls.CheckBox national;
 
         /// <summary>
         /// submit control.

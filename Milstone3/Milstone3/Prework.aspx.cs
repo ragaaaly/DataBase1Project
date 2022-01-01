@@ -24,7 +24,7 @@ namespace Proj
             String connstr = WebConfigurationManager.ConnectionStrings["post"].ToString();
             SqlConnection conn = new SqlConnection(connstr);
 
-            int id = 3;
+            int id = (int)Session["user"];
 
             SqlCommand tourtproc = new SqlCommand("tourturedgucian", conn);
             tourtproc.CommandType = CommandType.StoredProcedure;

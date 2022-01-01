@@ -1019,3 +1019,45 @@ delete from NonGUCianStudentRegisterThesis where supid in (select id from
 deleted)
 delete from Supervisor where id in (select id from deleted)
 delete from PostGradUser where id in (select id from deleted)
+
+Go
+create proc editExaminerProfile
+@id int ,@name varchar(20),@fieldOfWork varchar(100),@isNational BIT
+AS
+UPDATE Examiner
+SET name=@name,
+fieldOfWork = @fieldOfWork,
+isNational =@isNational
+WHERE id = @id
+
+GO 
+CREATE PROC search
+@name VARCHAR(20)
+AS 
+SELECT serialNumber ,title 
+FROM Thesis
+WHERE title like '%'+ @name +'%'
+
+
+GO
+CREATE PROC tourturedgucian
+@id int 
+AS 
+SELECT T.title,GS.firstName,GS.lastName,S.name
+FROM ExaminerEvaluateDefense EED inner JOIN Thesis T ON EED.serialNo = T.serialNumber
+inner JOIN GUCianStudentRegisterThesis GSRT ON T.serialNumber = GSRT.serial_no
+inner JOIN GucianStudent GS ON GSRT.sid = GS.id
+inner JOIN Supervisor S ON GSRT.supid =S.id
+where EED.examinerId=@id
+
+GO
+CREATE PROC tourturednonguc
+@id int 
+AS 
+SELECT T.title,GS.firstName,GS.lastName,S.name
+FROM ExaminerEvaluateDefense EED inner JOIN Thesis T ON EED.serialNo = T.serialNumber
+inner JOIN NonGUCianStudentRegisterThesis GSRT ON T.serialNumber = GSRT.serial_no
+inner JOIN NonGucianStudent GS ON GSRT.sid = GS.id
+inner JOIN Supervisor S ON GSRT.supid =S.id
+where EED.examinerId=@id
+

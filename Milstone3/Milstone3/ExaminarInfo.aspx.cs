@@ -41,15 +41,14 @@ namespace Proj
         {
             String connstr = WebConfigurationManager.ConnectionStrings["Post"].ToString();
             SqlConnection conn = new SqlConnection(connstr);
-            int id = 3;
-                //Int16.Parse();
+            int id = (int)Session["user"];
             String nname = name.Text;
             String fieldof = work.Text;
             Boolean nation = True.Checked;
 
             SqlCommand updateproc = new SqlCommand("editExaminerProfile", conn);
             updateproc.Parameters.Add(new SqlParameter("@id", id));
-            updateproc.Parameters.Add(new SqlParameter("@name",nname));
+            updateproc.Parameters.Add(new SqlParameter("@name", nname));
             updateproc.Parameters.Add(new SqlParameter("@fieldOfWork", fieldof));
             updateproc.Parameters.Add(new SqlParameter("@isNational", nation));
             updateproc.CommandType = CommandType.StoredProcedure;
