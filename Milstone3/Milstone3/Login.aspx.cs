@@ -7,6 +7,11 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.ComponentModel;
+using System.Drawing;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Milstone3
 {
@@ -15,7 +20,6 @@ namespace Milstone3
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-
         protected void loggingIn_Click(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();
@@ -60,11 +64,11 @@ namespace Milstone3
                     Response.Redirect("NonGucian.aspx");
 
                 }
-               
+
             }
             else
             {
-              ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Wrong User-id or password"  + "');", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Wrong User-id or password" + "');", true);
 
             }
             conn.Close();
@@ -73,5 +77,6 @@ namespace Milstone3
         {
             Response.Redirect("register.aspx");
         }
+
     }
 }

@@ -25,6 +25,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <h3>All Supervisors in the System!</h3>
+            <br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="ID" />

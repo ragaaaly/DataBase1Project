@@ -14,7 +14,7 @@ VALUES ('Engineering', 'Master', 'Retrospective Sensing - The Case of Smart Road
 INSERT INTO Thesis (field, type, title, startDate, endDate, defenseDate, grade, noExtenstion) 
 VALUES ('Engineering', 'Master', 'Edge Computing for Autonomous Driving', '1/1/2019','1/1/2021', '12/12/2020', 99.00, 0)
 
-INSERT INTO Thesis (field, type, title, startDate, endDate, defenseDate, grade, noExtenstion) 
+INSERT INTO Thesis (field, type, title, startDate, endDate, defenseDate, grade, noOfExtensions) 
 VALUES ('Engineering', 'PhD', 'Object Detection and Tracking using Stereo Cameras', '1/1/2019','1/1/2024', '12/12/2023', 99.00, 0)
 
 INSERT INTO Thesis (field, type, title, startDate, endDate, defenseDate, grade, noExtenstion) 

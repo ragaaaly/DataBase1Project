@@ -10,7 +10,7 @@
     #GridView1 {
         text-align: center;
         margin: auto;
-        width: 50%;
+        width: 30%;
         border: 5px solid #000000;
         padding: 10px;
     }

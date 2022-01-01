@@ -10,7 +10,7 @@
     form {
         text-align: center;
         margin: auto;
-        width: 80%;
+        width: 50%;
         border: 5px solid #000000;
         padding: 10px;
     }
@@ -19,9 +19,10 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="Label1" runat="server" Text="Thesis Serial Number"></asp:Label>
-
+            <br />
             <br />
             <asp:TextBox ID="ThesisSerialNo" runat="server"></asp:TextBox>
+            <br />
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="AdminUpdateExtensionProc" Text="Update No Of Extension by 1" />
 

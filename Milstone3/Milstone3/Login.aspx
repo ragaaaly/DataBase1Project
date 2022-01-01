@@ -13,38 +13,36 @@
     form {
         text-align: center;
         margin: auto;
-        width: 50%;
+        width: 30%;
         border: 5px solid #000000;
         padding: 10px;
+        font-family: "Sansita Swashed", cursive
     }
 </style>
 <body style="height: 478px">
     <form id="form1" runat="server">
-        <%--<div>--%>
-        </div>
         <div class="form-group">
-            Welcome<p>
-                Please enter your User-ID and password
-            </p>
-            <p>
-                User-ID
-            </p>
-            <p>
-                <asp:TextBox ID="id" runat="server"></asp:TextBox>
-            </p>
-            <p>
-                Password
-            </p>
-            <p>
-                <asp:TextBox ID="password" runat="server"></asp:TextBox>
-            </p>
-            <p>
-                <asp:Button ID="loggingIn" runat="server" class="btn btn-primary" Text="Login" OnClick="loggingIn_Click" />
-            </p>
-            Not registered yet?<br />
-            <p>
-                <asp:Button ID="register" runat="server" class="btn btn-primary" Text="Register" OnClick="register_Click" />
-            </p>
+            <asp:Label ID="Label1" runat="server" Text="Welcome"></asp:Label>
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Please enter your User-ID and password! "></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="User-ID"></asp:Label>
+            <br />
+            <asp:TextBox ID="id" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="Label4" runat="server" Text="Password"></asp:Label>
+            <br />
+            <asp:TextBox ID="password" type="password" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="loggingIn" runat="server" class="btn btn-primary" Text="Login" OnClick="loggingIn_Click" />
+            <br />
+            <br />
+            <asp:Label ID="Label5" runat="server" Text="Not registered yet?"></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="register" runat="server" class="btn btn-primary" Text="Register" OnClick="register_Click" />
         </div>
     </form>
 </body>

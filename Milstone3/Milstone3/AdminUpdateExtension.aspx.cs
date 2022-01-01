@@ -12,10 +12,6 @@ namespace Milstone3
 {
     public partial class AdminUpdateExtension : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
         protected void AdminUpdateExtensionProc(object sender, EventArgs e)
         {
             string connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();
@@ -24,10 +20,12 @@ namespace Milstone3
             SqlCommand AdminUpdateExtension = new SqlCommand("AdminUpdateExtension", conn);
             AdminUpdateExtension.CommandType = CommandType.StoredProcedure;
             AdminUpdateExtension.Parameters.Add(new SqlParameter("@ThesisSerialNo", ThesisSerialNo1));
-            conn.Open();
+            if (ThesisSerialNo.Text == "")
+                conn.Open();
             AdminUpdateExtension.ExecuteNonQuery();
-            Response.Write("<script>alert('Your data has been successfully updated')</script>");
+            Response.Write("<script>alert('Your data has been successfully updated!')</script>");
             conn.Close();
+
         }
     }
 }
