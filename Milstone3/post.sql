@@ -297,11 +297,11 @@ set @success=0
 end
 
 
---declare @success bit
---declare @type int
---exec userLogin 'hoda.desouki@student.guc.eg' ,'pass1' ,@success output ,@type output
---print @success 
---print @type
+declare @success bit
+declare @type int
+exec userLogin 'hoda.desouki@student.guc.eg' ,'pass1' ,@success output ,@type output
+print @success 
+print @type
 ------go
 ------exec studentRegister 'Hoda', 'Ahmed' ,'pass1', 'MET', 1, 'hoda.desouki@student.guc.eg','Sherouk City'
 ------go
@@ -349,12 +349,11 @@ Select
 serialNumber,field,type,title,startDate,endDate,defenseDate,years,grade,payment_id,noOfExtensions
 From Thesis
 
-
+--Edited
 go
 CREATE Proc AdminViewOnGoingTheses
-@thesesCount int output
 As
-Select @thesesCount=Count(*)
+Select Count(*) 'thesesCount'
 From Thesis
 where endDate > Convert(Date,CURRENT_TIMESTAMP)
 
@@ -377,7 +376,7 @@ sr.sid=gs.id
 where t.endDate > Convert(Date,CURRENT_TIMESTAMP)
 
 
---go
+go
 go
 CREATE Proc AdminListNonGucianCourse
 @courseID int
@@ -600,7 +599,7 @@ As
 if(exists(select * from Supervisor where id=@supervisorID))
 begin
 select u.id,u.email,u.password,s.name,s.faculty
-from PostGradUser u inner join Supervisor s on u.id=s.id
+from PostGradUser u inner join Supervisor s on u.id=s.id where @supervisorID = s.id
 end
 go
 ---------------------------------------
