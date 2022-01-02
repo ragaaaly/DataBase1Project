@@ -23,14 +23,14 @@ namespace Milstone3
             SqlConnection conn = new SqlConnection(connStr);
             SqlCommand addMobileproc = new SqlCommand("addMobile", conn);
             addMobileproc.CommandType = CommandType.StoredProcedure;
-            String id = (String)Session["user"];
+            int id = (int)Session["user"];
             String number = phone.Text;
             addMobileproc.Parameters.Add(new SqlParameter("@ID", id));
             addMobileproc.Parameters.Add(new SqlParameter("@mobile_number", number));
 
             conn.Open();
             addMobileproc.ExecuteNonQuery();
-           
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Phone number added successfully" + "');", true);
             conn.Close();
         }
     }
