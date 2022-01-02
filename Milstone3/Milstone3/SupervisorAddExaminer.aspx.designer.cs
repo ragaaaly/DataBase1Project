@@ -11,7 +11,7 @@ namespace Milstone3
 {
 
 
-    public partial class Supervisor
+    public partial class SupervisorAddExaminer
     {
 
         /// <summary>
@@ -24,49 +24,58 @@ namespace Milstone3
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// SupViewProfile control.
+        /// thesisSerialNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SupViewProfile;
+        protected global::System.Web.UI.WebControls.TextBox thesisSerialNo;
 
         /// <summary>
-        /// UpdateSupProfile control.
+        /// defenseDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateSupProfile;
+        protected global::System.Web.UI.WebControls.TextBox defenseDate;
 
         /// <summary>
-        /// ViewSupStudentsYears control.
+        /// examinerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ViewSupStudentsYears;
+        protected global::System.Web.UI.WebControls.TextBox examinerName;
 
         /// <summary>
-        /// EvaluateProgressReport control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EvaluateProgressReport;
+        protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
-        /// CancelThesis control.
+        /// national control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CancelThesis;
+        protected global::System.Web.UI.WebControls.RadioButton national;
+
+        /// <summary>
+        /// fieldOfWork control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox fieldOfWork;
 
         /// <summary>
         /// AddExaminer control.
@@ -76,23 +85,5 @@ namespace Milstone3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddExaminer;
-
-        /// <summary>
-        /// AddDefenseGucian control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddDefenseGucian;
-
-        /// <summary>
-        /// AddDefenseNonGucian control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddDefenseNonGucian;
     }
 }

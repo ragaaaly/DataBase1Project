@@ -9,7 +9,43 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <h2>  Hello Supervisor! </h2>
         </div>
+       
+        <p>
+            <asp:Button ID="SupViewProfile" runat="server" Text="My Profile" OnClick="SupViewProfil_Click" />
+            </p>
+
+         <p>
+            <asp:Button ID="UpdateSupProfile" runat="server" Text="Update My Profile" OnClick="UpdateSupProfile_Click" />
+            </p>
+
+        <p style="direction: ltr">
+            <asp:Button ID="ViewSupStudentsYears" runat="server" Text="My students' profiles" OnClick="ViewSupStudentsYears_Click" />
+            </p>
+        <p>
+            <asp:Button ID="EvaluateProgressReport" runat="server" Text="Evaluate A Progress Report" OnClick="EvaluateProgressReport_Click" />
+            </p>
+
+        <p> </p>
+
+         <p>
+            <asp:Button ID="CancelThesis" runat="server" Text="Cancel A Thesis" OnClick="CancelThesis_Click" />
+            </p>
+
+        <p>
+            <asp:Button ID="AddExaminer" runat="server" Text="Add an Examiner" OnClick="AddExaminer_Click" />
+            </p>
+
+        <p>
+            <asp:Button ID="AddDefenseGucian" runat="server" Text="Add a Defense for Gucian" OnClick="AddDefenseGucian_Click" />
+            </p>
+        <p>
+            <asp:Button ID="AddDefenseNonGucian" runat="server" Text="Add a Defense for NonGucian" OnClick="AddDefenseNonGucian_Click" />
+        
+        </p>
+
+
     </form>
 </body>
 </html>

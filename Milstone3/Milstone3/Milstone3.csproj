@@ -93,7 +93,16 @@
     <Content Include="RegisterExaminer.aspx" />
     <Content Include="RegisterStudent.aspx" />
     <Content Include="RegisterSupervisor.aspx" />
+    <Content Include="StudentPublications.aspx" />
     <Content Include="Supervisor.aspx" />
+    <Content Include="SupervisorAddExaminer.aspx" />
+    <Content Include="SupervisorCancelThesis.aspx" />
+    <Content Include="SupervisorDefenseGUCian.aspx" />
+    <Content Include="SupervisorDefenseNonGUCian.aspx" />
+    <Content Include="SupervisorEvaluateReport.aspx" />
+    <Content Include="SupervisorProfile.aspx" />
+    <Content Include="SupervisorStudents.aspx" />
+    <Content Include="SupervisorUpdateProfile.aspx" />
     <Content Include="theeeesis.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -281,12 +290,75 @@
     <Compile Include="RegisterSupervisor.aspx.designer.cs">
       <DependentUpon>RegisterSupervisor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StudentPublications.aspx.cs">
+      <DependentUpon>StudentPublications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPublications.aspx.designer.cs">
+      <DependentUpon>StudentPublications.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Supervisor.aspx.cs">
       <DependentUpon>Supervisor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Supervisor.aspx.designer.cs">
       <DependentUpon>Supervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorAddExaminer.aspx.cs">
+      <DependentUpon>SupervisorAddExaminer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorAddExaminer.aspx.designer.cs">
+      <DependentUpon>SupervisorAddExaminer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorCancelThesis.aspx.cs">
+      <DependentUpon>SupervisorCancelThesis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorCancelThesis.aspx.designer.cs">
+      <DependentUpon>SupervisorCancelThesis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorDefenseGUCian.aspx.cs">
+      <DependentUpon>SupervisorDefenseGUCian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorDefenseGUCian.aspx.designer.cs">
+      <DependentUpon>SupervisorDefenseGUCian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorDefenseNonGUCian.aspx.cs">
+      <DependentUpon>SupervisorDefenseNonGUCian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorDefenseNonGUCian.aspx.designer.cs">
+      <DependentUpon>SupervisorDefenseNonGUCian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorEvaluateReport.aspx.cs">
+      <DependentUpon>SupervisorEvaluateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorEvaluateReport.aspx.designer.cs">
+      <DependentUpon>SupervisorEvaluateReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorProfile.aspx.cs">
+      <DependentUpon>SupervisorProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorProfile.aspx.designer.cs">
+      <DependentUpon>SupervisorProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorStudents.aspx.cs">
+      <DependentUpon>SupervisorStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorStudents.aspx.designer.cs">
+      <DependentUpon>SupervisorStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorUpdateProfile.aspx.cs">
+      <DependentUpon>SupervisorUpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorUpdateProfile.aspx.designer.cs">
+      <DependentUpon>SupervisorUpdateProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="theeeesis.aspx.cs">
       <DependentUpon>theeeesis.aspx</DependentUpon>
