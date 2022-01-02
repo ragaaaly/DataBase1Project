@@ -8,38 +8,39 @@
 </head>
 <body>
     <form id="form1" runat="server">
-         <p>
+        <p>
             <asp:Label ID="Label5" runat="server" Text="Add A publication to a Thesis:"></asp:Label>
         </p>
-         <p>
+        <p>
             <asp:Label ID="Label3" runat="server" Text="Title"></asp:Label>
         </p>
         <p>
-            <asp:TextBox ID="title" runat="server"></asp:TextBox>
+            <asp:TextBox ID="title" runat="server" required="required"></asp:TextBox>
         </p>
-         <p>
+        <p>
             <asp:Label ID="Label2" runat="server" Text="Thesis Serial Number"></asp:Label>
         </p>
         <p>
-            <asp:TextBox ID="SSN" runat="server"></asp:TextBox>
+            <asp:TextBox ID="SSN" runat="server" required="required"></asp:TextBox>
         </p>
-         <p>
-             <asp:Calendar ID="pubDate" runat="server"></asp:Calendar>
+        <asp:Label ID="Label6" runat="server" Text="Publication date"></asp:Label>
+        <p>
+            <asp:Calendar ID="pubDate" runat="server" required="required"></asp:Calendar>
         </p>
-         <p>
+        <p>
             <asp:Label ID="Label1" runat="server" Text="Host"></asp:Label>
         </p>
         <p>
-            <asp:TextBox ID="host" runat="server"></asp:TextBox>
+            <asp:TextBox ID="host" runat="server" required="required"></asp:TextBox>
         </p>
-         <p>
+        <p>
             <asp:Label ID="Label4" runat="server" Text="Place"></asp:Label>
         </p>
         <p>
-            <asp:TextBox ID="place" runat="server"></asp:TextBox>
+            <asp:TextBox ID="place" runat="server" required="required"></asp:TextBox>
         </p>
-         <p>
-             <asp:RadioButton ID="accepted" runat="server" Text ="accepted"/>
+        <p>
+            <asp:CheckBox ID="accepted" runat="server" Text="accepted" />
         </p>
         <p>
             <asp:Button ID="add" runat="server" Text="Add" OnClick="add_Click" />

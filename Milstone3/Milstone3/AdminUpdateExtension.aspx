@@ -21,7 +21,7 @@
             <asp:Label ID="Label1" runat="server" Text="Thesis Serial Number"></asp:Label>
             <br />
             <br />
-            <asp:TextBox ID="ThesisSerialNo" runat="server"></asp:TextBox>
+            <asp:TextBox ID="ThesisSerialNo" runat="server" required="required"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="AdminUpdateExtensionProc" Text="Update No Of Extension by 1" />

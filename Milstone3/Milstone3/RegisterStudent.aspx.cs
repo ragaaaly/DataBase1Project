@@ -32,15 +32,12 @@ namespace Milstone3
             String fac = faculty.Text;
             String mail = email.Text;
             String add = address.Text;
-            bool Guc=false;
-            if (gucian.Checked)
-            {
-                Guc = true;
-            }
+            bool Guc = gucian.Checked;
+
             SqlCommand RegisterStudentproc = new SqlCommand("studentRegister", conn);
             RegisterStudentproc.CommandType = CommandType.StoredProcedure;
             RegisterStudentproc.Parameters.Add(new SqlParameter("@first_name", first));
-            RegisterStudentproc.Parameters.Add(new SqlParameter("@last_name ", last ));
+            RegisterStudentproc.Parameters.Add(new SqlParameter("@last_name ", last));
             RegisterStudentproc.Parameters.Add(new SqlParameter("@password", pass));
             RegisterStudentproc.Parameters.Add(new SqlParameter("@faculty", fac));
             RegisterStudentproc.Parameters.Add(new SqlParameter("@email", mail));
@@ -51,8 +48,8 @@ namespace Milstone3
             //Session["user"] = ID
             conn.Open();
             RegisterStudentproc.ExecuteNonQuery();
-            String studentid = "Your User-ID is: "+ user.Value.ToString();
-            ScriptManager.RegisterStartupScript(this, this.GetType(),"alert",
+            String studentid = "Your User-ID is: " + user.Value.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
              "alert('" + studentid + "');window.location ='Login.aspx';", true);
             //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + userid + "');", true);
             conn.Close();

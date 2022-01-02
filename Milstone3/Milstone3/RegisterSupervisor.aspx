@@ -25,26 +25,26 @@
         <p>
             First Name
         </p>
-        <asp:TextBox ID="firstName" runat="server"></asp:TextBox>
+        <asp:TextBox ID="firstName" runat="server" required="required"></asp:TextBox>
         <p>
             Last Name
         </p>
         <p>
-            <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
+            <asp:TextBox ID="lastName" runat="server" required="required"></asp:TextBox>
         </p>
 
         <p>
             Password
         </p>
-        <asp:TextBox ID="password" runat="server"></asp:TextBox>
+        <asp:TextBox ID="password" runat="server" required="required"></asp:TextBox>
         <p>
             Faculty
         </p>
-        <asp:TextBox ID="faculty" runat="server"></asp:TextBox>
+        <asp:TextBox ID="faculty" runat="server" required="required"></asp:TextBox>
         <br />
         <br />
         Email<p>
-            <asp:TextBox ID="email" runat="server"></asp:TextBox>
+            <asp:TextBox ID="email" runat="server" required="required"></asp:TextBox>
         </p>
         <p>
             <asp:Button ID="submit" class="btn btn-outline-dark" runat="server" OnClick="Button1_Click" Text="Submit" />

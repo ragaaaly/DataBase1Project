@@ -25,7 +25,7 @@ namespace Milstone3
             AddProgressReport.CommandType = CommandType.StoredProcedure;
             int id = (int)Session["user"];
             String Serial = SSN.Text;
-           // DateTime progressDate= reportDate.SelectedDate;
+            // DateTime progressDate= reportDate.SelectedDate;
             String progressNumber = reportNo.Text;
             AddProgressReport.Parameters.Add(new SqlParameter("@thesisSerialNo ", Serial));
             AddProgressReport.Parameters.Add(new SqlParameter("@progressReportNo", progressNumber));
@@ -55,10 +55,10 @@ namespace Milstone3
             {
                 Response.Write("<script>alert('Progress Report was successfully added')</script>");
             }
-            if(success.Value.ToString() == "False")
+            if (success.Value.ToString() == "False")
             {
-               
-                Response.Write("<script>alert('Could not add a Progress Report to a finished thesis')</script>");
+
+                Response.Write("<script>alert('Please enter valid data!')</script>");
             }
             conn.Close();
         }

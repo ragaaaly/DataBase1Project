@@ -35,8 +35,8 @@ namespace Proj
 
             commproc.CommandType = CommandType.StoredProcedure;
 
-            decimal grade = Decimal.Parse(Grade.Text) ;
-                //Int16.Parse(Grade.Text);
+            decimal grade = Decimal.Parse(Grade.Text);
+            //Int16.Parse(Grade.Text);
 
             SqlCommand Gradeproc = new SqlCommand("AddDefenseGrade", conn);
             Gradeproc.Parameters.AddWithValue("@grade", grade);
@@ -49,6 +49,7 @@ namespace Proj
             commproc.ExecuteNonQuery();
             Gradeproc.ExecuteNonQuery();
             conn.Close();
+            Response.Write("<script>alert('Your data has been updated!')</script>");
 
         }
 

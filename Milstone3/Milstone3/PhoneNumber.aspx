@@ -1,5 +1,4 @@
-﻿
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PhoneNumber.aspx.cs" Inherits="Milstone3.PhoneNumber" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PhoneNumber.aspx.cs" Inherits="Milstone3.PhoneNumber" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +12,7 @@
             <asp:Label ID="Label1" runat="server" Text="Please Enter your phone number"></asp:Label>
         </div>
         <p>
-            <asp:TextBox ID="phone" runat="server"></asp:TextBox>
+            <asp:TextBox ID="phone" runat="server" required="required"></asp:TextBox>
 
         </p>
         <p>

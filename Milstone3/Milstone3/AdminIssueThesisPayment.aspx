@@ -19,23 +19,23 @@
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" Text="Thesis Serial Number:"></asp:Label>
         <br />
-        <asp:TextBox ID="ThesisSerialNo" runat="server"></asp:TextBox>
+        <asp:TextBox ID="ThesisSerialNo" runat="server" required="required"></asp:TextBox>
         <br />
         <asp:Label ID="Label2" runat="server" Text="Amount:"></asp:Label>
         <br />
 
-        <asp:TextBox ID="amount" runat="server"></asp:TextBox>
+        <asp:TextBox ID="amount" runat="server" required="required"></asp:TextBox>
         <br />
         <asp:Label ID="Label3" runat="server" Text="Number Of Installements:"></asp:Label>
         <br />
 
-        <asp:TextBox ID="noOfInstallments" runat="server"></asp:TextBox>
+        <asp:TextBox ID="noOfInstallments" runat="server" required="required"></asp:TextBox>
         <br />
 
         <asp:Label ID="Label4" runat="server" Text="Fund Percentage:"></asp:Label>
         <br />
 
-        <asp:TextBox ID="fundPercentage" runat="server"></asp:TextBox>
+        <asp:TextBox ID="fundPercentage" runat="server" required="required"></asp:TextBox>
         <br />
 
         <asp:Button ID="Button1" runat="server" OnClick="AdminIssueThesisPaymentProc" Text="Save" />

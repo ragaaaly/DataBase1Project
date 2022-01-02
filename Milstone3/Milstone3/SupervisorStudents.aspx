@@ -9,25 +9,25 @@
 <body>
     <form id="form1" runat="server">
         <div>
-           <h1> Your Students   </h1>
+            <h1>Your Students   </h1>
             <p>
                 Please Enter a Student's ID      
                   <asp:TextBox ID="studentID" runat="server"></asp:TextBox>
                 <asp:Button ID="ViewAStudentPublications" runat="server" Text="View Publications" OnClick="ViewAStudentPublications_Click" />
 
-                </p>
+            </p>
             <p>
-            <asp:GridView  ID="GridView1"  runat="server" AutoGenerateColumns="false" >
-                <Columns>
-                <asp:BoundField  DataField="sid" HeaderText="ID" />
-                <asp:BoundField  DataField="firstName" HeaderText="First Name" />
-                <asp:BoundField  DataField="lastName" HeaderText="Last Name" />
-                <asp:BoundField  DataField="years" HeaderText="Years Spent in Thesis" />
-                
-            </Columns>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
+                    <Columns>
+                        <asp:BoundField DataField="sid" HeaderText="ID" />
+                        <asp:BoundField DataField="firstName" HeaderText="First Name" />
+                        <asp:BoundField DataField="lastName" HeaderText="Last Name" />
+                        <asp:BoundField DataField="years" HeaderText="Years Spent in Thesis" />
 
-           </asp:GridView>
-                </p>
+                    </Columns>
+
+                </asp:GridView>
+            </p>
         </div>
     </form>
 </body>

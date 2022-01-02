@@ -16,15 +16,33 @@ namespace Milstone3
         {
             string connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
-            int ThesisSerialNo1 = Int16.Parse(ThesisSerialNo.Text);
-            SqlCommand AdminUpdateExtension = new SqlCommand("AdminUpdateExtension", conn);
-            AdminUpdateExtension.CommandType = CommandType.StoredProcedure;
-            AdminUpdateExtension.Parameters.Add(new SqlParameter("@ThesisSerialNo", ThesisSerialNo1));
-            if (ThesisSerialNo.Text == "")
+            try
+            {
+                int ThesisSerialNo1 = Int16.Parse(ThesisSerialNo.Text);
+                SqlCommand AdminUpdateExtension = new SqlCommand("AdminUpdateExtension", conn);
+                AdminUpdateExtension.CommandType = CommandType.StoredProcedure;
+                AdminUpdateExtension.Parameters.Add(new SqlParameter("@ThesisSerialNo", ThesisSerialNo1));
+                SqlParameter success = AdminUpdateExtension.Parameters.Add("@success", SqlDbType.Bit);
+                success.Direction = ParameterDirection.Output;
                 conn.Open();
-            AdminUpdateExtension.ExecuteNonQuery();
-            Response.Write("<script>alert('Your data has been successfully updated!')</script>");
-            conn.Close();
+                AdminUpdateExtension.ExecuteNonQuery();
+                if (success.Value.ToString() == "True")
+                {
+                    Response.Write("<script>alert('Your data has been successfully updated!')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Please enter a valid Thesis Serial Number!')</script>");
+
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Please enter a valid Thesis Serial Number!')</script>");
+            }
+
+
 
         }
     }

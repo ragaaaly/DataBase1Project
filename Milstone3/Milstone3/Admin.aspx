@@ -1,14 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Milstone3.Admin" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-        crossorigin="anonymous">
-</head>
 <style>
     form {
         text-align: center;
@@ -19,10 +11,19 @@
         font-family: "Sansita Swashed", cursive
     }
 </style>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous" />
+</head>
+
 <body>
     <form id="form1" runat="server">
         <div>
-
+            <h2>Welcome Admin!</h2>
+            <br />
             <asp:Button ID="Button1" class="btn btn-outline-dark" runat="server" OnClick="AdminViewSupervisorProfile" Text="List all supervisors" Height="38px" Width="380px" />
 
             <br />
@@ -49,7 +50,8 @@
             <br />
 
             <asp:Button ID="Button6" class="btn btn-outline-dark" runat="server" OnClick="AdminUpdateExtension" Text="Update the number of thesis extension" Height="38px" Width="380px" />
-
+            <br />
+            <br />
         </div>
     </form>
 </body>

@@ -20,15 +20,24 @@ namespace Milstone3
         {
             string connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
-            int paymentID1 = Int16.Parse(paymentID.Text);
-            DateTime InstallStartDate1 = DateTime.Parse(InstallStartDate.Text);
-            SqlCommand AdminIssueInstallPayment = new SqlCommand("AdminIssueInstallPayment", conn);
-            AdminIssueInstallPayment.CommandType = CommandType.StoredProcedure;
-            AdminIssueInstallPayment.Parameters.Add(new SqlParameter("@paymentID", paymentID1));
-            AdminIssueInstallPayment.Parameters.Add(new SqlParameter("@InstallStartDate ", InstallStartDate1));
-            conn.Open();
-            AdminIssueInstallPayment.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                int paymentID1 = Int16.Parse(paymentID.Text);
+                DateTime InstallStartDate1 = DateTime.Parse(InstallStartDate.Text);
+                SqlCommand AdminIssueInstallPayment = new SqlCommand("AdminIssueInstallPayment", conn);
+                AdminIssueInstallPayment.CommandType = CommandType.StoredProcedure;
+                AdminIssueInstallPayment.Parameters.Add(new SqlParameter("@paymentID", paymentID1));
+                AdminIssueInstallPayment.Parameters.Add(new SqlParameter("@InstallStartDate ", InstallStartDate1));
+                conn.Open();
+                AdminIssueInstallPayment.ExecuteNonQuery();
+                conn.Close();
+                Response.Write("<script>alert('Your data has been updated!')</script>");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Please enter valid data!')</script>");
+            }
+
         }
     }
 }

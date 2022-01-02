@@ -21,19 +21,30 @@ namespace Milstone3
         {
             string connStr = WebConfigurationManager.ConnectionStrings["post"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
-            int ThesisSerialNo1 = Int16.Parse(ThesisSerialNo.Text);
-            decimal amount1 = Decimal.Parse(amount.Text);
-            int noOfInstallments1 = Int16.Parse(noOfInstallments.Text);
-            decimal fundPercentage1 = Decimal.Parse(fundPercentage.Text);
-            SqlCommand AdminIssueThesisPayment = new SqlCommand("AdminIssueThesisPayment", conn);
-            AdminIssueThesisPayment.CommandType = CommandType.StoredProcedure;
-            AdminIssueThesisPayment.Parameters.Add(new SqlParameter("@ThesisSerialNo", ThesisSerialNo1));
-            AdminIssueThesisPayment.Parameters.Add(new SqlParameter("@amount ", amount1));
-            AdminIssueThesisPayment.Parameters.Add(new SqlParameter("@noOfInstallments", noOfInstallments1));
-            AdminIssueThesisPayment.Parameters.Add(new SqlParameter("@fundPercentage", fundPercentage1));
-            conn.Open();
-            AdminIssueThesisPayment.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                int ThesisSerialNo1 = Int16.Parse(ThesisSerialNo.Text);
+                decimal amount1 = Decimal.Parse(amount.Text);
+                int noOfInstallments1 = Int16.Parse(noOfInstallments.Text);
+                decimal fundPercentage1 = Decimal.Parse(fundPercentage.Text);
+                SqlCommand AdminIssueThesisPayment = new SqlCommand("AdminIssueThesisPayment", conn);
+                AdminIssueThesisPayment.CommandType = CommandType.StoredProcedure;
+                AdminIssueThesisPayment.Parameters.Add(new SqlParameter("@ThesisSerialNo", ThesisSerialNo1));
+                AdminIssueThesisPayment.Parameters.Add(new SqlParameter("@amount ", amount1));
+                AdminIssueThesisPayment.Parameters.Add(new SqlParameter("@noOfInstallments", noOfInstallments1));
+                AdminIssueThesisPayment.Parameters.Add(new SqlParameter("@fundPercentage", fundPercentage1));
+                conn.Open();
+                AdminIssueThesisPayment.ExecuteNonQuery();
+                conn.Close();
+                Response.Write("<script>alert('Your data has been updated!')</script>");
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Please enter a valid data!')</script>");
+            }
+
+
         }
     }
 }

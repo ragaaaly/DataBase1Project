@@ -11,22 +11,22 @@
         <div>
             Please enter the data of the Report.
         </div>
-         <p>
+        <p>
+            Thesis Serial No
+        </p>
+        <asp:TextBox ID="thesisSerialNo" runat="server" required="required"></asp:TextBox>
+        <p>
+            Progress Report No
+        </p>
+        <asp:TextBox ID="progressReportNo" runat="server" required="required"></asp:TextBox>
+        <p>
+            Evaluation
+        </p>
+        <asp:TextBox ID="evaluation" runat="server" required="required"></asp:TextBox>
 
-              Thesis Serial No</p>
-        <asp:TextBox ID="thesisSerialNo" runat="server"></asp:TextBox>      
-         <p>
-
-            Progress Report No</p>
-        <asp:TextBox ID="progressReportNo" runat="server"></asp:TextBox>  
-         <p>
-
-              Evaluation</p>
-        <asp:TextBox ID="evaluation" runat="server"></asp:TextBox> 
-          
-         <p>
-        <asp:Button ID="EvaluateProgressReport" runat="server" Text="Add Evaluation" OnClick="EvaluateProgressReport_Click" />
-            </p>
+        <p>
+            <asp:Button ID="EvaluateProgressReport" runat="server" Text="Add Evaluation" OnClick="EvaluateProgressReport_Click" />
+        </p>
     </form>
 </body>
 </html>

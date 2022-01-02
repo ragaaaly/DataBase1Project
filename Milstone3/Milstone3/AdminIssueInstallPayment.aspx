@@ -20,11 +20,11 @@
         <div>
             <asp:Label ID="Label1" runat="server" Text="Payment ID"></asp:Label>
             <br />
-            <asp:TextBox ID="paymentID" runat="server"></asp:TextBox>
+            <asp:TextBox ID="paymentID" runat="server" required="required"></asp:TextBox>
             <br />
             <asp:Label ID="Label2" runat="server" Text="Install Start Date"></asp:Label>
             <br />
-            <asp:TextBox ID="InstallStartDate" runat="server"></asp:TextBox>
+            <asp:TextBox ID="InstallStartDate" runat="server" required="required"></asp:TextBox>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="AdminIssueInstallPaymentProc" Text="Save" />
         </div>

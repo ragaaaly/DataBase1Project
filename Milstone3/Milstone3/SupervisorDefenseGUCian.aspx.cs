@@ -33,17 +33,28 @@ namespace Milstone3
             AddDefenseGucian.Parameters.Add(new SqlParameter("@DefenseLocation", defLocation));
             SqlParameter fail = AddDefenseGucian.Parameters.Add("@fail", SqlDbType.Bit);
             fail.Direction = ParameterDirection.Output;
+            SqlParameter successThesis = AddDefenseGucian.Parameters.Add("@successThesis", SqlDbType.Bit);
+            successThesis.Direction = ParameterDirection.Output;
 
 
             conn.Open();
             AddDefenseGucian.ExecuteNonQuery();
-            if (fail.Value.ToString() == "True")
+            if (successThesis.Value.ToString() == "True")
             {
-                Response.Write("<script>alert('There is an exsiting defense for this thesis')</script>");
+                if (fail.Value.ToString() == "True")
+                {
+                    Response.Write("<script>alert('There is an exsiting defense for this thesis')</script>");
 
+                }
+                else
+                {
+                    Response.Write("<script>alert('You have added the defense data successfully!')</script>");
+                }
             }
-            else {
-                Response.Write("<script>alert('You have added the defense data successfully!')</script>");
+            else
+            {
+                Response.Write("<script>alert('Please Enter a valid thesis!')</script>");
+
             }
             conn.Close();
         }

@@ -5,7 +5,7 @@
     form {
         text-align: center;
         margin: auto;
-        width: 80%;
+        width: 40%;
         border: 5px solid #000000;
         padding: 10px;
     }
@@ -22,16 +22,17 @@
 <body>
     <form id="form1" runat="server">
         Please Update Your Info<p>
-            Name</p>
-        <asp:TextBox ID="name" runat="server"></asp:TextBox>
+            Name
+        </p>
+        <asp:TextBox ID="name" runat="server" required="required"></asp:TextBox>
         <br />
         <br />
         Field OFWork<br />
-        <asp:TextBox ID="work" runat="server"></asp:TextBox>
+        <asp:TextBox ID="work" runat="server" required="required"></asp:TextBox>
         <br />
         <br />
-        National<br />
-        <asp:CheckBox ID="True" runat="server" OnCheckedChanged="True_CheckedChanged" />
+        <br />
+        <asp:CheckBox ID="True" Text="National" runat="server" OnCheckedChanged="True_CheckedChanged" />
         <br />
         <br />
         <asp:Button ID="Save" runat="server" Text="Save" OnClick="Supervisior" />

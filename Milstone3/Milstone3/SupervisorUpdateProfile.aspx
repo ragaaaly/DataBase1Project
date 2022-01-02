@@ -11,18 +11,18 @@
         <div>
             Please Enter the Updated Data
         </div>
-         <p>
+        <p>
+            Name
+        </p>
+        <asp:TextBox ID="supervisorname" runat="server" required="required"></asp:TextBox>
+        <p>
+            Faculty
+        </p>
+        <asp:TextBox ID="faculty" runat="server" required="required"></asp:TextBox>
 
-              Name</p>
-        <asp:TextBox ID="supervisorname" runat="server"></asp:TextBox>      
-         <p>
-
-            Faculty</p>
-        <asp:TextBox ID="faculty" runat="server"></asp:TextBox>  
-        
-         <p>
-             <asp:Button ID="UpdateSupProfile" runat="server" Text="Update" OnClick="UpdateSupProfile_Click" style="height: 29px" />
-                   </p>
+        <p>
+            <asp:Button ID="UpdateSupProfile" runat="server" Text="Update" OnClick="UpdateSupProfile_Click" Style="height: 29px" />
+        </p>
     </form>
 </body>
 </html>

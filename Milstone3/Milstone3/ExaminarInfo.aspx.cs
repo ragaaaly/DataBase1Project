@@ -56,6 +56,8 @@ namespace Proj
             conn.Open();
             updateproc.ExecuteNonQuery();
             conn.Close();
+            Response.Write("<script>alert('Your data has been updated!')</script>");
+
 
         }
 

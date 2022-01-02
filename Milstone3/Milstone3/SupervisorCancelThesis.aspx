@@ -13,13 +13,13 @@
         </div>
         Please Enter the Thesis Serial Number
          <p>
+             Thesis Serial No
+        </p>
+        <asp:TextBox ID="thesisSerialNo" runat="server" required="required"></asp:TextBox>
 
-              Thesis Serial No</p>
-        <asp:TextBox ID="thesisSerialNo" runat="server"></asp:TextBox>      
-       
-              <p>
-        <asp:Button ID="CancelThesis" runat="server" Text="Cancel Thesis" OnClick="CancelThesis_Click" />
-            </p>
+        <p>
+            <asp:Button ID="CancelThesis" runat="server" Text="Cancel Thesis" OnClick="CancelThesis_Click" />
+        </p>
     </form>
 </body>
 </html>
